@@ -7,7 +7,8 @@ class Counter extends Component {
 
     state = {
         counter: 5,
-        quota: 5
+        quota: 5,
+        results: []
     }
 
     // onTambah = () => {
@@ -106,6 +107,29 @@ class Counter extends Component {
         })
     }
 
+    storeHandler = () => {
+        this.setState((prevState) => {
+            const objectBaru = { 
+                ...prevState,
+                results: prevState.results.concat({
+                    id: new Date().getTime(),
+                    value:this.state.counter
+                })
+            }
+            return objectBaru;
+        })
+    }
+
+    deleteHandler = (id) => {
+        this.setState((prevState) => {
+            const objectBaru = {
+                ...prevState,
+                results: prevState.results.filter((el) => el.id !== id)
+            }
+            return objectBaru;
+        })
+    }
+
     render() {
         return (
             <div>
@@ -127,6 +151,18 @@ class Counter extends Component {
                     clicked={() => this.counterChangeHandler("kurangKuota", +this.state.quota)}
                 />
                 <CounterInput changed={(event) => this.onQuotaChangeHandler(event)}/>
+                <button onClick={this.storeHandler}>Simpan Data</button>
+                <ul>
+                    {this.state.results.map((result) => {
+                        return (
+                            <li key={result.id} 
+                                onClick={() => this.deleteHandler(result.id)}
+                            >
+                                {result.value}
+                            </li>
+                        )
+                    })}
+                </ul>
             </div>
         )
     }
