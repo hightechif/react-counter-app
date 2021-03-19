@@ -13,25 +13,25 @@ class Counter extends Component {
 
     // onTambah = () => {
     //     this.setState((prevState) => {
-    //         return { value: prevState.value + 1 }
+    //         return { counter: prevState.counter + 1 }
     //     })
     // }
 
     // onKurang = () => {
     //     this.setState((prevState) => {
-    //         return { value: prevState.value - 1 }
+    //         return { counter: prevState.counter - 1 }
     //     })
     // }
 
     // onTambahKuota = (n) => {
     //     this.setState((prevState) => {
-    //         return { value: prevState.value + n }
+    //         return { counter: prevState.counter + n }
     //     })
     // }
 
     // onKurangKuota = (n) => {
     //     this.setState((prevState) => {
-    //         return { value: prevState.value - n }
+    //         return { counter: prevState.counter - n }
     //     })
     // }
 
@@ -39,12 +39,12 @@ class Counter extends Component {
     //     switch(operand) {
     //         case "+":
     //             this.setState((prevState) => {
-    //                 return { value: prevState.value + number }
+    //                 return { counter: prevState.counter + number }
     //             })
     //             break;
     //         case "-":
     //             this.setState((prevState) => {
-    //                 return { value: prevState.value - number }
+    //                 return { counter: prevState.counter - number }
     //             })
     //             break;
     //     }
